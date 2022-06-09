@@ -18,7 +18,8 @@ use ApiPlatform\Metadata\Get;
             provider: CheapestBooksProvider::class,
             paginationEnabled: false,
             openapiContext: ['summary' => 'get Users'],
-        )
+	),
+        new GetCollection()
     ]
 )]
 #[ORM\Entity(repositoryClass: UserRepository::class)]
