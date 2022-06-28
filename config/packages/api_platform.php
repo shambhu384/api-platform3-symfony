@@ -17,11 +17,17 @@ return static function (ContainerConfigurator $containerConfigurator): void {
             'json' => ['application/merge-patch+json'],
         ],
         'swagger' => [
-            'versions' => [3],
+		'versions' => [3],
+         	'api_keys' => [
+             		'apiKey' => [
+                		'name' => 'Authorization',
+				'type' => 'header'
+	     		]
+		]
         ],
         'exception_to_status' => [
             InvalidArgumentException::class => 422,
-        ],
+	]
     ]);
 };
 
